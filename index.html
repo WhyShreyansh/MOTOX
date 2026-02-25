@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOTOX — Bike Transform</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div id="cur"></div>
+<div id="curR"></div>
+<div id="flash"></div>
+
+<nav>
+  <a href="#" class="logo">MOTO<em>X</em></a>
+  <ul>
+    <li><a href="#">Models</a></li>
+    <li><a href="#">Performance</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#" class="nav-cta">Book Ride</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="glow-l"></div>
+  <div class="glow-r"></div>
+  <div class="speed-wrap" id="sw"></div>
+
+  <div class="headline">
+    <h1><span class="ghost">RIDE</span><br><span>TRANS</span><span class="fire">FORM</span></h1>
+    <div class="tag">One Road. Two Souls. Infinite Power.</div>
+  </div>
+
+  <div class="stage">
+    <div class="road-line"></div>
+    <div class="road-dots"></div>
+    <div class="bike-shadow" id="bikeShad"></div>
+
+    <div class="bikes-wrap" id="bwrap">
+      <canvas id="particleCanvas"></canvas>
+      <div class="scan-line" id="scanLine"></div>
+
+      <!-- ══ HARLEY DAVIDSON CRUISER SVG ══ -->
+      <svg class="bike-svg" id="svgCruiser" viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="chromeTire" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#3a3a3a"/>
+            <stop offset="60%" stop-color="#1a1a1a"/>
+            <stop offset="100%" stop-color="#0a0a0a"/>
+          </radialGradient>
+          <radialGradient id="wheelHub" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#888"/>
+            <stop offset="50%" stop-color="#555"/>
+            <stop offset="100%" stop-color="#222"/>
+          </radialGradient>
+          <linearGradient id="tankRed" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ff2200"/>
+            <stop offset="40%" stop-color="#cc1500"/>
+            <stop offset="100%" stop-color="#7a0c00"/>
+          </linearGradient>
+          <linearGradient id="fenderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#cc1500"/>
+            <stop offset="100%" stop-color="#880d00"/>
+          </linearGradient>
+          <linearGradient id="engineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#3a3a3a"/>
+            <stop offset="100%" stop-color="#1a1a1a"/>
+          </linearGradient>
+          <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d0d0d0"/>
+            <stop offset="50%" stop-color="#888"/>
+            <stop offset="100%" stop-color="#444"/>
+          </linearGradient>
+          <filter id="glow1">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="softShadow">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+          </filter>
+        </defs>
