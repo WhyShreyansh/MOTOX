@@ -510,4 +510,27 @@ document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseleave',()=>{curR.style.transform='translate(-50%,-50%) scale(1)';cur.style.transform='translate(-50%,-50%) scale(1)';});
 });
 
+// SPEED LINES
+const sw=document.getElementById('sw');
+for(let i=0;i<18;i++){const l=document.createElement('div');l.className='spd';l.style.cssText=`top:${10+Math.random()*80}%;width:${60+Math.random()*280}px;--d:${.4+Math.random()*.5}s;--dl:${Math.random()*3.5}s;`;sw.appendChild(l);}
+
+// PARTICLES
+const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');
+let pts=[];
+function resC(){const c=canvas.parentElement;canvas.width=c.offsetWidth;canvas.height=c.offsetHeight;}
+resC(); window.addEventListener('resize',resC);
+function boom(col1,col2){
+  const cx=canvas.width*.5,cy=canvas.height*.55;
+  for(let i=0;i<90;i++){
+    const a=Math.random()*Math.PI*2,sp=1.5+Math.random()*6;
+    pts.push({x:cx+(Math.random()-.5)*260,y:cy+(Math.random()-.5)*160,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-Math.random()*2,life:1,decay:.012+Math.random()*.022,sz:2+Math.random()*6,col:Math.random()>.5?col1:col2});
+  }
+}
+(function animP(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pts=pts.filter(p=>p.life>0);
+  pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.06;p.vx*=.96;p.life-=p.decay;ctx.save();ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.col;ctx.shadowBlur=10;ctx.shadowColor=p.col;ctx.beginPath();ctx.arc(p.x,p.y,p.sz*p.life,0,Math.PI*2);ctx.fill();ctx.restore();});
+  requestAnimationFrame(animP);
+})();
+
 
