@@ -604,4 +604,36 @@ function switchTo(t){
   },680);
 }
 
+// AUTO CYCLE
+let auto=setInterval(()=>switchTo(cur2===1?2:1),4500);
+document.querySelectorAll('.mbtn').forEach(b=>b.addEventListener('click',()=>{clearInterval(auto);setTimeout(()=>{auto=setInterval(()=>switchTo(cur2===1?2:1),4500);},9000);}));
+
+// 3D TILT
+const stage=document.querySelector('.stage');
+document.querySelector('.hero').addEventListener('mousemove',e=>{
+  const r=stage.getBoundingClientRect(),dx=(e.clientX-(r.left+r.width/2))/(r.width/2),dy=(e.clientY-(r.top+r.height/2))/(r.height/2);
+  stage.style.transform=`perspective(1400px) rotateX(${-dy*4}deg) rotateY(${dx*5}deg)`;
+  stage.style.transition='';
+});
+document.querySelector('.hero').addEventListener('mouseleave',()=>{stage.style.transition='transform .8s ease';stage.style.transform='';});
+
+// SCROLL REVEAL
+const ro=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*100);}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// WHEEL SPIN CSS
+const style=document.createElement('style');
+style.textContent=`
+  @keyframes wspin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  #svgCruiser g[transform="translate(130,258)"] > g,
+  #svgCruiser g[transform="translate(510,258)"] > g,
+  #svgSport g[transform="translate(128,258)"] > g,
+  #svgSport g[transform="translate(510,258)"] > g
+  { transform-origin:center; animation:wspin 1.2s linear infinite; }
+`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
+
 
