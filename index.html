@@ -495,4 +495,19 @@
   <p>Built for speed. Designed for legends.</p>
 </footer>
 
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let rx=window.innerWidth/2,ry=window.innerHeight/2;
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px';
+  rx+=(e.clientX-rx)*.13; ry+=(e.clientY-ry)*.13;
+  curR.style.left=rx+'px'; curR.style.top=ry+'px';
+});
+(function animC(){rx+=(parseFloat(cur.style.left||rx)-rx)*.13;ry+=(parseFloat(cur.style.top||ry)-ry)*.13;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(animC);})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{curR.style.transform='translate(-50%,-50%) scale(2)';cur.style.transform='translate(-50%,-50%) scale(.35)';});
+  el.addEventListener('mouseleave',()=>{curR.style.transform='translate(-50%,-50%) scale(1)';cur.style.transform='translate(-50%,-50%) scale(1)';});
+});
+
 
