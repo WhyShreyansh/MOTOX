@@ -14,3 +14,23 @@ nav ul a{color:rgba(240,240,240,.45);text-decoration:none;font-size:12px;letter-
 nav ul a:hover{color:var(--a1);}
 .nav-cta{border:1px solid var(--a1);padding:9px 26px;color:var(--a1)!important;transition:all .3s!important;}
 .nav-cta:hover{background:var(--a1);color:#fff!important;}
+
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;}
+
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,69,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,69,0,.03) 1px,transparent 1px);background-size:65px 65px;animation:gridS 30s linear infinite;}
+@keyframes gridS{to{background-position:65px 65px;}}
+
+.glow-l{position:absolute;left:-150px;top:50%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(255,69,0,.13),transparent 70%);animation:gp 5s ease-in-out infinite;transform:translateY(-50%);}
+.glow-r{position:absolute;right:-150px;top:50%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.1),transparent 70%);animation:gp 5s 2.5s ease-in-out infinite;transform:translateY(-50%);}
+@keyframes gp{0%,100%{opacity:.6;scale:1}50%{opacity:1;scale:1.1}}
+
+.speed-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.spd{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(0,229,255,.2),transparent);animation:spdA var(--d) var(--dl) linear infinite;opacity:0;}
+@keyframes spdA{0%{opacity:0;transform:translateX(110%)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translateX(-110%)}}
+
+.headline{position:relative;z-index:10;text-align:center;margin-bottom:36px;animation:up .9s ease both;}
+.headline h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(54px,9vw,118px);line-height:.88;letter-spacing:10px;}
+.headline h1 .ghost{-webkit-text-stroke:1.5px rgba(255,255,255,.15);color:transparent;}
+.headline h1 .fire{color:var(--a1);}
+.headline .tag{margin-top:16px;font-size:12px;letter-spacing:5px;color:rgba(240,240,240,.32);text-transform:uppercase;animation:up .9s .2s ease both;}
+@keyframes up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
