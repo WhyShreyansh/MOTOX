@@ -57,3 +57,14 @@ nav ul a:hover{color:var(--a1);}
 
 .morph-bar{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);width:220px;height:2px;background:rgba(255,255,255,.07);}
 .morph-fill{height:100%;background:linear-gradient(90deg,var(--a1),var(--a2));width:0%;box-shadow:0 0 8px var(--a2);}
+
+/* ── CONTROLS ── */
+.controls{position:relative;z-index:10;margin-top:110px;display:flex;gap:14px;animation:up .9s .6s ease both;}
+.mbtn{position:relative;overflow:hidden;padding:13px 40px;border:1px solid rgba(255,255,255,.13);background:transparent;color:rgba(240,240,240,.5);font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;cursor:none;transition:all .35s;}
+.mbtn::before{content:'';position:absolute;inset:0;background:var(--a1);transform:translateX(-101%);transition:transform .35s ease;z-index:-1;}
+.mbtn:hover::before{transform:translateX(0);}
+.mbtn:hover{color:var(--w);border-color:var(--a1);}
+.mbtn.active{background:var(--a1);color:var(--w);border-color:var(--a1);}
+.mbtn.active::before{transform:translateX(0);}
+
+#flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:300;}
