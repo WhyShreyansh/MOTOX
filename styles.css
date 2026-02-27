@@ -68,3 +68,12 @@ nav ul a:hover{color:var(--a1);}
 .mbtn.active::before{transform:translateX(0);}
 
 #flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:300;}
+
+/* ── SPECS STRIP ── */
+.specs{display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
+.spec-item{flex:1;max-width:260px;padding:48px 36px;border-right:1px solid rgba(255,255,255,.05);text-align:center;transition:background .3s;}
+.spec-item:last-child{border-right:none;}
+.spec-item:hover{background:rgba(255,69,0,.04);}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:60px;color:var(--a1);line-height:1;}
+.su{font-size:13px;color:rgba(240,240,240,.3);letter-spacing:2px;}
+.sl{font-size:11px;letter-spacing:3px;color:rgba(240,240,240,.35);text-transform:uppercase;margin-top:6px;}
