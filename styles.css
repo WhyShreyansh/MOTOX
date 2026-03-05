@@ -1,4 +1,4 @@
-    :root{--bg:#08080c;--a1:#ff4500;--a2:#00e5ff;--w:#f0f0f0;}
+         :root{--bg:#08080c;--a1:#ff4500;--a2:#00e5ff;--w:#f0f0f0;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--w);font-family:'Rajdhani',sans-serif;overflow-x:hidden;cursor:none;}
