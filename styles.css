@@ -15,7 +15,7 @@ nav ul a:hover{color:var(--a1);}
 .nav-cta{border:1px solid var(--a1);padding:9px 26px;color:var(--a1)!important;transition:all .3s!important;}
 .nav-cta:hover{background:var(--a1);color:#fff!important;}
 
-.hero                     {height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;}
 
 .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,69,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,69,0,.03) 1px,transparent 1px);background-size:65px 65px;animation:gridS 30s linear infinite;}
 @keyframes gridS{to{background-position:65px 65px;}}
